@@ -34,8 +34,7 @@ window.addEventListener('scroll', update, { passive: true });
 window.addEventListener('resize', update);
 update();
 
-// Scroll animations: elements slide/fade in when they enter the screen,
-// and play in reverse when you scroll back up past them (like apple.com / rolex.com).
+// Scroll animations: elements slide/fade in when they enter the screen
 const animated = document.querySelectorAll('.reveal, .reveal-img');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
@@ -43,7 +42,7 @@ if ('IntersectionObserver' in window) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       } else if (entry.boundingClientRect.top > 0) {
-        // The element is below the screen (user scrolled up): reverse the animation.
+
         entry.target.classList.remove('visible');
       }
       // If it left through the top, keep it visible.
